@@ -2,6 +2,8 @@ import './App.css';
 import NavigacioniMeni from "./components/NavigacioniMeni";
 import Pocetna from "./components/Pocetna";
 import {useState} from "react";
+import {BrowserRouter,Routes,Route} from "react-router-dom";
+import DodajHranu from "./components/DodajHranu";
 
 function App() {
 
@@ -42,12 +44,41 @@ function App() {
             vreme:'~30min'
         }
     ]);
+    const [jelovnikPrikaz, setJelovnikPrikaz]=useState(jelovnik);
 
+    const [porudzbine, setPorudzbine]=useState([]);
+
+    function vratiId(){
+        return jelovnik.length==0?1:jelovnik[jelovnik.length - 1].id + 1
+    }
+
+    function dodajHranu(e){
+        e.preventDefault();
+        jelovnik.push({
+            id:vratiId(),
+            naziv:e.target[0].value,
+            opis:e.target[1].value,
+            cena:e.target[2].value,
+            vreme:e.target[3].value,
+        })
+        e.target.reset();
+        setJelovnik(jelovnik);
+        setJelovnikPrikaz(jelovnikPrikaz);
+    }
 
   return (
     <div className="App">
-      <NavigacioniMeni />
-        <Pocetna jelovnik={jelovnik}/>
+
+        <BrowserRouter>
+            <NavigacioniMeni />
+            <Routes>
+                <Route path='/' element={<Pocetna jelovnik={jelovnikPrikaz}/>}/>
+                <Route path='/dodajHranu' element={<DodajHranu dodajHranu={dodajHranu}/>}/>
+
+
+            </Routes>
+        </BrowserRouter>
+
     </div>
   );
 }
