@@ -1,7 +1,8 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import {MdOutlineRestaurantMenu} from "react-icons/md";
 
-function NavigacioniMeni(props) {
+function NavigacioniMeni({brojPoruzbina,pretraga}) {
     const stil={backgroundColor:'rgba(253,204,142,0.46)'}
     return (
         <nav className="navbar navbar-expand-xl navbar-light " style={stil}>
@@ -18,10 +19,14 @@ function NavigacioniMeni(props) {
                         <li className="nav-item">
                             <Link className="nav-link" to="/porudzbine">Vidi sve porudžbine</Link>
                         </li>
+                        <li>
+                            {brojPoruzbina}<MdOutlineRestaurantMenu size={30}/>
+
+                        </li>
 
                     </ul>
                     <form className="d-flex">
-                        <input className="form-control me-2" type="search" placeholder="Pretrazi hranu" />
+                        <input className="form-control me-2" type="search" onInput={pretraga} placeholder="Pretrazi hranu" />
                     </form>
                 </div>
             </div>

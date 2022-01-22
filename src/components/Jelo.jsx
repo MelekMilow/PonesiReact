@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Jelo({jelo}) {
+function Jelo({jelo,napraviPorudzbinu,porudzbina}) {
     const stil={backgroundColor:'rgba(253,204,142,0.74)',color:'#000000'}
 
     return (
@@ -10,7 +10,10 @@ function Jelo({jelo}) {
                  <h5 className="card-title">{jelo.naziv}</h5>
                  <p className="card-text">{jelo.opis}</p>
                  <p className="card-text">{jelo.cena} dinara</p>
-                 <a href="#" className="btn btn-success">Poruči</a>
+                 {porudzbina==0?<button type='button' onClick={()=>napraviPorudzbinu(jelo.id)} className="btn btn-success">Poruči</button>
+                     :
+                     <p className="card-text">Broj porudzbina: {jelo.brojPorudzbina}</p>
+                 }
              </div>
              <div className="card-footer" >
                  <p>Očekivano vreme isporuke {jelo.vreme}</p>
