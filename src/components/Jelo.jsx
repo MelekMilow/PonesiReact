@@ -12,7 +12,10 @@ function Jelo({jelo,napraviPorudzbinu,porudzbina}) {
                  <p className="card-text">{jelo.cena} dinara</p>
                  {porudzbina==0?<button type='button' onClick={()=>napraviPorudzbinu(jelo.id)} className="btn btn-success">Poruči</button>
                      :
-                     <p className="card-text">Broj porudzbina: {jelo.brojPorudzbina}</p>
+                    <>
+                        <p className="card-text">Broj porudzbina: {jelo.brojPorudzbina}</p>
+                        <p className="card-text">Ukupan iznos: {jelo.brojPorudzbina*jelo.cena}</p>
+                    </>
                  }
              </div>
              <div className="card-footer" >
