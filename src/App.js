@@ -33,6 +33,13 @@ function App() {
             opis:'rolovano svinjsko meso punjeno kajmakom, prilog – pomfrit i limun',
             cena:720,
             vreme:'~40min'
+        },
+        {
+            id:5,
+            naziv:'Rebarca na kajmaku',
+            opis:'svinjska rebarca, kajmak, prilog - pomfrit',
+            cena:720,
+            vreme:'~30min'
         }
     ]);
 
