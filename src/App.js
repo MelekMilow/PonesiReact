@@ -1,23 +1,46 @@
-import logo from './logo.svg';
 import './App.css';
+import NavigacioniMeni from "./components/NavigacioniMeni";
+import Pocetna from "./components/Pocetna";
+import {useState} from "react";
 
 function App() {
+
+    const [jelovnik, setJelovnik]=useState([
+        {
+            id:1,
+            naziv:'Leskovačka mućkalica',
+            opis:'tri vrste mesa sa prazilukom, ljutom paprikom, paradajzom i peršunovim listom, prilog – kajmak',
+            cena:520,
+            vreme:'~50min'
+        },
+        {
+            id:2,
+            naziv:'Juneći gulaš',
+            opis:'prilog – pire krompir',
+            cena:480,
+            vreme:'~30min'
+        },
+        {
+            id:3,
+            naziv:'Bečka šnicla',
+            opis:'panirani pileći file, prilog – pomfrit, tartar sos i limun',
+            cena:590,
+            vreme:'~30min'
+        },
+        {
+            id:4,
+            naziv:'Karađorđeva  šnicla',
+            opis:'rolovano svinjsko meso punjeno kajmakom, prilog – pomfrit i limun',
+            cena:720,
+            vreme:'~40min'
+        }
+    ]);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavigacioniMeni />
+        <Pocetna jelovnik={jelovnik}/>
     </div>
   );
 }
