@@ -91,7 +91,7 @@ function App() {
     function pretraga(e){
         let novNiz=[];
         jelovnik.forEach((jelo)=>{
-            if(jelo.naslov.toLowerCase().indexOf(e.target.value.toLowerCase())>-1){
+            if(jelo.naziv.toLowerCase().indexOf(e.target.value.toLowerCase())>-1){
                 novNiz.push(jelo)
             }
         })
