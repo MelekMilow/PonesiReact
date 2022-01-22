@@ -88,7 +88,7 @@ function App() {
        setBrojPoruzbina(brojPoruzbina+1);
     }
 
-    function pretraga(){
+    function pretraga(e){
         let novNiz=[];
         jelovnik.forEach((jelo)=>{
             if(jelo.naslov.toLowerCase().indexOf(e.target.value.toLowerCase())>-1){
