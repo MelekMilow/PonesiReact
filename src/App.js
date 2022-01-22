@@ -82,7 +82,6 @@ function App() {
            }
        })
        setJelovnik(jelovnik);
-       setJelovnikPrikaz(jelovnik);
 
        setPorudzbine(jelovnik.filter((jelo)=>(jelo.brojPorudzbina>0)));
        setBrojPoruzbina(brojPoruzbina+1);
