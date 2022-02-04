@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import {MdOutlineRestaurantMenu} from "react-icons/md";
+import Kartica from "./Kartica";
 
 function NavigacioniMeni({brojPoruzbina,pretraga}) {
     const stil={backgroundColor:'rgba(253,204,142,0.46)'}
@@ -10,15 +11,9 @@ function NavigacioniMeni({brojPoruzbina,pretraga}) {
                 <p className="navbar-brand" >Ponesi</p>
                 <div className="collapse navbar-collapse show" id="navbarBasic">
                     <ul className="navbar-nav me-auto mb-2 mb-xl-0">
-                        <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to="/">Početna</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/dodajHranu">Dodaj hranu</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/porudzbine">Vidi sve porudžbine</Link>
-                        </li>
+                        <Kartica putanja="/" tekst="Početna"/>
+                        <Kartica putanja="/dodajHranu" tekst="Dodaj hranu"/>
+                        <Kartica putanja="/porudzbine" tekst="Vidi sve porudžbine"/>
                         <li>
                             {brojPoruzbina}<MdOutlineRestaurantMenu size={30}/>
 
